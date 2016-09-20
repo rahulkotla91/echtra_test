@@ -1,0 +1,19 @@
+Automation involves there major steps.
+1.Building the Application.
+2.Server spin up.
+3.Testing the application.
+
+1.Building the application:
+->Clones from Git repo
+->Builds the application using cmake
+
+2.Server spin up:
+->Builds a base image from given dockerfile.
+->Builds an application server image by copying application in to base image.
+->Builds a redis server image.
+->Spin up redis server image.
+->Spin up application server linked up with redis server.
+
+3.Testing the application:
+->Both the virtual server i.e., redis and application servers are linked up and will communicating through port 6379 and 8082 respectively. The application server hosts a simple "Hello World!" page using which it is tested by checking if it is still hosting it or not. 
+

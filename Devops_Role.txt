@@ -1,0 +1,27 @@
+
+
+Here is how I would interact and work with developers and validators in my role as DevOps Eng:
+
+Step 1: Do my homework on the product by going over the specs and to develop an overview
+Step 2: Meet with a developer/architect to get the highlevel overview of the project or product I am going to work on and also clarify my doubts etc
+Step 3: Work with developer to gather the following information
+	-->  PARAMETERS like    free/limited version premium version.. 
+				Operating Systems Supported
+				Software need to build the product for different configurations
+				Regression suites that has to run and how long the execution takes
+				What special requirements do we need to run regression suites
+				Validation Owners 
+				How active is the product like currently under-development product wwould need continuous check-ins than a maintainance product/cloned product
+Step 4: COME UP with a plan on how to automate things like 
+		How often should we run CI?? every 4 hours if the branch is too active or once in a day.. It also depends on lets say regression suite takes around 2 hrs to complete .. there is no point in running the tests on every check-in .. probably just run the sanity check when check-in happens and run regression suite every 4/5hrs for all the check-ins that were made till then.
+
+		Scoping for special requirements, like do we need to use actual servers/products or validate on virtual machines and which kind of virtualization to choose oracle virtual box or docker etc.. I would prefer oracle virtual box if there is something too much to do and not interfere with the physical server like lets say installing some kind of software etc that can cause potential crashes and would prefer docker if it lightweight server that could run as an isolateed task..
+
+		Run the build commands with different build options and make sure I got all the configurations to build. Make a list of all errors I am seeing and work with developer to resolve them.
+
+		Make a list of validation tests neeeded. Work with validation team to get the validation setup up and to run the test.
+
+		Now that I have the build commands and tests, I would design automated test infrastructure 
+
+Step 5: Work with Developers and System architects to finalize on the design for automated infrastructure. Incorporate their input and get the system up and running. 
+Step 6: This should be an on going process.. as their would be continuous build and releases/ infrastructure improvements, infrastructure failures/build failures/test failures. I will work with developers and validators closely to resolve the issues and to get things going..
